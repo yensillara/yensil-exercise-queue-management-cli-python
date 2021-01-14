@@ -12,13 +12,15 @@ def print_queue():
     print(queue.get_queue())
 
 def add():
-    pass
+    str_someone=str(someone)
+    add_someone_queue.append(str_title)
+    print("You have added someone to the queue")
 
 def dequeue():
     pass
 
 def save():
-    pass
+    #with open (queue.json)
 
 def load():
     pass 
