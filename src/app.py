@@ -12,8 +12,10 @@ def print_queue():
     print(queue.get_queue())
 
 def add():
+    global queue
+    print(f"You have {str(len(queue.get_queue()))} clients before you")
     str_someone=str(someone)
-    add_someone_queue.append(str_title)
+    queue.enqueue(str_someone)
     print("You have added someone to the queue")
 
 def dequeue():
@@ -42,8 +44,24 @@ What would you like to do (type a number and press Enter)?
 
     option = int(input("Enter a number:"))
     # add your options here using conditionals (if)
-    if option == 3:
-        print_queue()
+    if option == 1:
+        print("Add someone") 
+        someone =input()
+        add(someone)
+    elif option == 2:
+        print("Remove someone") 
+        someone =input()
+        dequeue()
+        print("")
+    elif option == 3:
+        count = 1
+        for person in queue.get_queue():
+            print(str(count)+'. '+str(person))
+            count = count + 1
+    elif option == 4:
+        print("")
+    elif option == 5:
+        print("")
     elif option == 6:
         print("Bye bye!")
         stop = True
