@@ -9,11 +9,17 @@ class Queue:
             self._mode = mode
     
     def enqueue(self, item):
-         self._queue.append(item)
-         
-    def dequeue(self):
-        pass
+       
+        self._queue.append(item)
+        
+    def dequeue(self, number_to_delete):        
+        """         
+        Delete a item in the queue         
+        """         
+        self._queue.pop(int(number_to_delete)-1)
+
     def get_queue(self):
         return self._queue
+
     def size(self):
         pass
